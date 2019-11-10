@@ -1,0 +1,10 @@
+# ignore all logs
+*.log
+
+# Local dev directories
+env/
+staticfiles/
+mediafiles/
+
+# ignore sqlite databases
+db.sqlite3
