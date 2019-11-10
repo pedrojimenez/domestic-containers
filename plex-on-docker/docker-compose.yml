@@ -1,0 +1,20 @@
+---
+version: "2"
+services:
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=500
+      - PGID=500
+      - VERSION=docker
+      - UMASK_SET=022 #optional
+    volumes:
+      # - /home/pedro.jimenez.solis/Videos/plex/config:/config
+      - /home/pedro.jimenez.solis/Videos/plex/transcode:/transcode
+      - /home/pedro.jimenez.solis/Videos/anime:/anime
+      - /home/pedro.jimenez.solis/Videos/caas:/caas
+      - /home/pedro.jimenez.solis/Videos/movies:/movies
+      - /home/pedro.jimenez.solis/Videos/videos:/videos
+    restart: unless-stopped
